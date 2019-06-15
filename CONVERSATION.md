@@ -130,3 +130,39 @@
 | nickname | string | 是 | 昵称 |
 | avatar | string | 是 | 头像地址 |
 | time | string | 是 | 信息发送时间 |
+
+---
+
+### 删除信息
+
+#### 基本信息
+
+| 接口名称 | 当前版本 | 当前状态 | 接口地址 | 请求方式 | 返回格式 |
+|---|---|---|---|---|---|
+| 删除信息 | v1.0 | 完成 | /message\_delete| POST | json |
+
+#### 请求
+
+##### Headers:
+
+| 参数名称 | 参考 | 是否必须 | 备注 |
+|---|---|---|---|
+| Content-Type | Content-Type: application/json | 是 |  |
+| X-APP-Key | 123456 | 是 |  |
+| X-APP-Session | 123456 | 是 | 当前登录用户的 session |
+
+##### Body:
+
+| 参数名称 | 参考 | 是否必须 | 备注 |
+|---|---|---|---|
+| conversationid | 12345678 | 是 | 对话的 ID |
+| type | 1 | 是 | 1 仅自己，2 群体 |
+
+#### 返回
+
+| 名称 | 类型 | 是否必须 | 备注 |
+|---|---|---|---|
+| code | int | 是 | 0，1 |
+| msg | string | 是 | 成功，不成功 |
+| data | array | 是 | null |
+
