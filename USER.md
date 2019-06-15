@@ -6,7 +6,7 @@
 
 | 接口名称 | 当前版本 | 当前状态 | 接口地址 | 请求方式 | 返回格式 |
 |---|---|---|---|---|---|
-| 用户信息 | v1.0 | 完成 | /user | GET | base64 | json |
+| 用户信息 | v1.0 | 完成 | /user | GET | json |
 
 #### 请求
 
@@ -32,6 +32,6 @@
 |---|---|---|---|
 | id | int | 是 | 0，1 |
 | email | string | 是 | email |
-| username | array | 是 | 用户名，可 @ 部分 |
+| username | string | 是 | 用户名，可 @ 部分 |
 | nickname | string | 是 | 昵称 |
 | avatar | string | 是 | 头像地址 |
