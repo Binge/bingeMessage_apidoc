@@ -31,13 +31,13 @@
 |---|---|---|---|
 | code | int | 是 | 0，1 |
 | msg | string | 是 | 成功，不成功 |
-| data | array | 是 | 返回除密码之外的用户的所有信息，数组格式 |
+| data | object | 是 | 返回 |
 
 ##### data
 
 | 名称 | 类型 | 是否必须 | 备注 |
 |---|---|---|---|
-| conversationid | int | 是 | 该对话的 ID |
+| conversationid | int | 是 | 该对话的 ID，负数，九个数字 |
 | match | array | 是 | 对话的两个人的 ID，格式为 ["123456","654321"] |
 
 ---
@@ -64,7 +64,7 @@
 
 | 参数名称 | 类型 | 是否必须 | 备注 |
 |---|---|---|---|
-| conversationid | int | 是 | 对话的 ID |
+| conversationid | int | 是 | 对话的 ID，负数，九个数字 |
 | type | int | 是 | 信息的类型，-1 文本，-2 图像， -3 视频， -4 文件， -5 位置， -6 音频|
 | content | string | 是 | 信息内容，如果是图像，视频，音频，文件，则使用 url |
 | createdtime | string | 是 | 当前时间，格式是时间戳，毫秒级 |
@@ -109,7 +109,7 @@
 
 | 参数名称 | 类型 | 是否必须 | 备注 |
 |---|---|---|---|
-| conversationid | int | 是 | 对话的 ID |
+| conversationid | int | 是 | 对话的 ID，负数，九个数字 |
 | start | int | 否 | 从第几条开始，默认 0 |
 | limit | int | 否 | 每页显示的条数，默认 20 |
 
@@ -155,7 +155,7 @@
 
 | 参数名称 | 类型 | 是否必须 | 备注 |
 |---|---|---|---|
-| conversationid | int | 是 | 对话的 ID |
+| conversationid | int | 是 | 对话的 ID，负数，九个数字 |
 | type | int | 是 | 1 仅自己，2 群体 |
 
 #### 返回
