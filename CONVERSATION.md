@@ -67,7 +67,7 @@
 | conversationid | int | 是 | 对话的 ID，负数，九个数字 |
 | type | int | 是 | 信息的类型，-1 文本，-2 图像， -3 视频， -4 文件， -5 位置， -6 音频|
 | content | string | 是 | 信息内容，如果是图像，视频，音频，文件，则使用 url |
-| createdtime | string | 是 | 当前时间，格式是时间戳，毫秒级 |
+| time | string | 是 | 当前时间，格式是时间戳，毫秒级 |
 
 #### 返回
 
