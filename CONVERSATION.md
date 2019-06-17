@@ -155,7 +155,7 @@
 
 | 参数名称 | 类型 | 是否必须 | 备注 |
 |---|---|---|---|
-| conversationid | int | 是 | 对话的 ID，负数，九个数字 |
+| messagekey | string | 是 | 待删除的信息的 key |
 | type | int | 是 | 1 仅自己，2 群体 |
 
 #### 返回
