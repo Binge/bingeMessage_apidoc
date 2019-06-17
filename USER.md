@@ -12,11 +12,11 @@
 
 ##### Headers:
 
-| 参数名称 | 参考 | 是否必须 | 备注 |
-|---|---|---|---|
-| Content-Type | Content-Type: application/json | 是 |  |
-| X-APP-Key | 123456 | 是 |  |
-| X-APP-Session | 123456 | 是 | 当前登录用户的 session |
+| 参数名称 | 是否必须 | 备注 |
+|---|---|---|
+| Content-Type | 是 | Content-Type: application/json |
+| X-HA-Key | 是 |  |
+| X-HA-Session | 是 | 当前登录用户的 session |
 
 #### 返回
 
@@ -24,7 +24,7 @@
 |---|---|---|---|
 | code | int | 是 | 0，1 |
 | msg | string | 是 | 成功，不成功 |
-| data | array | 是 | 返回除密码之外的用户的所有信息，数组格式 |
+| data | object | 是 | 返回除密码之外的用户的所有信息，数组格式 |
 
 ##### data
 
@@ -34,6 +34,7 @@
 | email | string | 是 | email |
 | username | string | 是 | 用户名，可 @ 部分 |
 | nickname | string | 是 | 昵称 |
+| uid | string | 是 | 用户 UID |
 | avatar | string | 是 | 头像地址 |
 
 ---
@@ -50,18 +51,18 @@
 
 ##### Headers:
 
-| 参数名称 | 参考 | 是否必须 | 备注 |
-|---|---|---|---|
-| Content-Type | Content-Type: application/json | 是 |  |
-| X-APP-Key | 123456 | 是 |  |
-| X-APP-Session | 123456 | 是 | 当前登录用户的 session |
+| 参数名称 | 是否必须 | 备注 |
+|---|---|---|
+| Content-Type | 是 | Content-Type: application/json |
+| X-HA-Key | 是 |  |
+| X-HA-Session | 是 | 当前登录用户的 session |
 
 ##### Body:
 
-| 参数名称 | 参考 | 是否必须 | 备注 |
+| 参数名称 | 类型 | 是否必须 | 备注 |
 |---|---|---|---|
-| passiveuser | 12345678 | 是 | 被禁止的用户 |
-| time |  | 是 | 当前时间，格式是时间戳，毫秒级 |
+| passiveuser | int | 是 | 被禁止的用户的 UID |
+| time | string | 是 | 当前时间，格式是时间戳，毫秒级 |
 
 #### 返回
 
@@ -85,18 +86,18 @@
 
 ##### Headers:
 
-| 参数名称 | 参考 | 是否必须 | 备注 |
-|---|---|---|---|
-| Content-Type | Content-Type: application/json | 是 |  |
-| X-APP-Key | 123456 | 是 |  |
-| X-APP-Session | 123456 | 是 | 当前登录用户的 session |
+| 参数名称 | 是否必须 | 备注 |
+|---|---|---|
+| Content-Type | 是 | Content-Type: application/json |
+| X-HA-Key | 是 |  |
+| X-HA-Session | 是 | 当前登录用户的 session |
 
 ##### Body:
 
-| 参数名称 | 参考 | 是否必须 | 备注 |
+| 参数名称 | 类型 | 是否必须 | 备注 |
 |---|---|---|---|
-| passiveuser | 12345678 | 是 | 被举报的用户 |
-| time |  | 是 | 当前时间，格式是时间戳，毫秒级 |
+| passiveuser | int | 是 | 被举报的用户 UID |
+| time | string | 是 | 当前时间，格式是时间戳，毫秒级 |
 
 #### 返回
 
