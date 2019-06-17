@@ -6,27 +6,27 @@
 
 | 接口名称 | 当前版本 | 当前状态 | 接口地址 | 请求方式 | 返回格式 |
 |---|---|---|---|---|---|
-| 请求 Email 验证码 | v1.0 | 完成 | /requestemailcode | POST | json |
+| 请求 Email 验证码 | v1.0 | 完成 | /email\_code\_request | POST | json |
 
 #### 请求
 
 ##### Headers:
 
-| 参数名称 | 参考 | 是否必须 | 备注 |
-|---|---|---|---|
-| Content-Type | Content-Type: application/json | 是 |  |
-| X-BD-Key | 123456 | 是 |  |
+| 参数名称 | 是否必须 | 备注 |
+|---|---|---|
+| Content-Type | 是 |  Content-Type: application/json |
+| X-HA-Key | 是 |  |
 
 ##### Body:
 
-| 参数名称 | 参考 | 是否必须 | 备注 |
+| 参数名称 | 类型 | 是否必须 | 备注 |
 |---|---|---|---|
-| email | demo@demo.com | 是 | Email |
-| time |  | 是 | 当前时间，格式是时间戳，毫秒级 |
-| timezone |  | 是 | 当前时区 |
-| devicetype |  | 是 | 设备类型，iOS, Android, macOS, windows |
-| devicetoken |  | 否 | iOS/macOS 设备必须填写 |
-| deviceid |  | 否 | Android 设备必须填写  |
+| email | string | 是 | Email |
+| time | string | 是 | 当前时间，格式是时间戳，毫秒级 |
+| timezone | string | 是 | 当前时区 |
+| devicetype | string | 是 | 设备类型，iOS, Android, macOS, windows |
+| devicetoken | string | 否 | iOS/macOS 设备必须填写 |
+| deviceid | string | 否 | Android 设备必须填写  |
 
 #### 返回
 
@@ -50,18 +50,18 @@
 
 ##### Headers:
 
-| 参数名称 | 参考 | 是否必须 | 备注 |
+| 参数名称 | 是否必须 | 备注 |
 |---|---|---|---|
-| Content-Type | Content-Type: application/json | 是 |  |
-| X-BD-Key | 123456 | 是 |  |
+| Content-Type | 是 | Content-Type: application/json |
+| X-BD-Key | 是 |  |
 
 ##### Body:
 
-| 参数名称 | 参考 | 是否必须 | 备注 |
+| 参数名称 | 类型 | 是否必须 | 备注 |
 |---|---|---|---|
-| email | demo@demo.com | 是 | Email 地址 |
-| code | 1234 | 是 | 验证码 |
-| time | 123456 | 是 | 当前时间，格式是时间戳，毫秒级 |
+| email | string | 是 | Email 地址 |
+| code | int | 是 | 验证码 |
+| time | string | 是 | 当前时间，格式是时间戳，毫秒级 |
 
 #### 返回
 
@@ -69,7 +69,7 @@
 |---|---|---|---|
 | code | int | 是 | 0，1 |
 | msg | string | 是 | 正确，错误 |
-| data | string | 是 | null |
+| data | object | 是 | null |
 
 ##### data:
 
