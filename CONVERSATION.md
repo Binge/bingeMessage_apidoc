@@ -6,24 +6,24 @@
 
 | 接口名称 | 当前版本 | 当前状态 | 接口地址 | 请求方式 | 返回格式 |
 |---|---|---|---|---|---|
-| 创建对话 | v1.0 | 完成 | /conversationi\_create | POST | json |
+| 创建对话 | v1.0 | 完成 | /conversation | POST | json |
 
 #### 请求
 
 ##### Headers:
 
-| 参数名称 | 参考 | 是否必须 | 备注 |
-|---|---|---|---|
-| Content-Type | Content-Type: application/json | 是 |  |
-| X-APP-Key | 123456 | 是 |  |
-| X-APP-Session | 123456 | 是 | 当前登录用户的 session |
+| 参数名称 | 是否必须 | 备注 |
+|---|---|---|
+| Content-Type | 是 | Content-Type: application/json |
+| X-HA-Key | 是 |  |
+| X-HA-Session | 是 | 当前登录用户的 session |
 
 ##### Body:
 
-| 参数名称 | 参考 | 是否必须 | 备注 |
+| 参数名称 | 类型 | 是否必须 | 备注 |
 |---|---|---|---|
-| passiveuser | 12345678 | 是 | 参与对话的用户 |
-| time |  | 是 | 当前时间，格式是时间戳，毫秒级 |
+| passiveuser | int | 是 | 参与对话的用户 UID |
+| time | string | 是 | 当前时间，格式是时间戳，毫秒级 |
 
 #### 返回
 
@@ -37,7 +37,7 @@
 
 | 名称 | 类型 | 是否必须 | 备注 |
 |---|---|---|---|
-| id | int | 是 | 该对话的 ID |
+| conversationid | int | 是 | 该对话的 ID |
 | match | array | 是 | 对话的两个人的 ID，格式为 ["123456","654321"] |
 
 ---
@@ -48,26 +48,26 @@
 
 | 接口名称 | 当前版本 | 当前状态 | 接口地址 | 请求方式 | 返回格式 |
 |---|---|---|---|---|---|
-| 发送信息 | v1.0 | 完成 | /message\_send| POST | json |
+| 发送信息 | v1.0 | 完成 | /message| POST | json |
 
 #### 请求
 
 ##### Headers:
 
-| 参数名称 | 参考 | 是否必须 | 备注 |
-|---|---|---|---|
-| Content-Type | Content-Type: application/json | 是 |  |
-| X-APP-Key | 123456 | 是 |  |
-| X-APP-Session | 123456 | 是 | 当前登录用户的 session |
+| 参数名称 | 是否必须 | 备注 |
+|---|---|---|
+| Content-Type | 是 | Content-Type: application/json |
+| X-APP-Key | 是 |  |
+| X-APP-Session | 是 | 当前登录用户的 session |
 
 ##### Body:
 
-| 参数名称 | 参考 | 是否必须 | 备注 |
+| 参数名称 | 类型 | 是否必须 | 备注 |
 |---|---|---|---|
-| conversationid | 12345678 | 是 | 对话的 ID |
-| type | -1 | 是 | 信息的类型，-1 文本，-2 图像， -3 视频， -4 文件， -5 位置， -6 音频|
-| content | | 是 | 信息内容，如果是图像，视频，音频，文件，则使用 url |
-| createdtime |  | 是 | 当前时间，格式是时间戳，毫秒级 |
+| conversationid | int | 是 | 对话的 ID |
+| type | int | 是 | 信息的类型，-1 文本，-2 图像， -3 视频， -4 文件， -5 位置， -6 音频|
+| content | string | 是 | 信息内容，如果是图像，视频，音频，文件，则使用 url |
+| createdtime | string | 是 | 当前时间，格式是时间戳，毫秒级 |
 
 #### 返回
 
@@ -75,43 +75,43 @@
 |---|---|---|---|
 | code | int | 是 | 0，1 |
 | msg | string | 是 | 成功，不成功 |
-| data | array | 是 | 返回内容，数组格式 |
+| data | object | 是 | 返回内容，数组格式 |
 
 ##### data
 
 | 名称 | 类型 | 是否必须 | 备注 |
 |---|---|---|---|
-| issent | int | 是 | 是否已经发送 |
-| ispushed | int | 是 | 是否已经推送 |
+| issent | int | 是 | 是否已发送 |
+| ispushed | int | 是 | 是否已推送 |
 | isread | int | 是 | 是否已阅读|
 
 ---
 
-### 某组对话列表 
+### 某组对话内容列表 
 
 #### 基本信息
 
 | 接口名称 | 当前版本 | 当前状态 | 接口地址 | 请求方式 | 返回格式 |
 |---|---|---|---|---|---|
-| 某组对话列表 | v1.0 | 完成 | /conversation\_list | GET | json |
+| 某组对话内容列表 | v1.0 | 完成 | /message | GET | json |
 
 #### 请求
 
 ##### Headers:
 
-| 参数名称 | 参考 | 是否必须 | 备注 |
-|---|---|---|---|
-| Content-Type | Content-Type: application/json | 是 |  |
-| X-APP-Key | 123456 | 是 |  |
-| X-APP-Session | 123456 | 是 | 当前登录用户的 session |
+| 参数名称 | 是否必须 | 备注 |
+|---|---|---|
+| Content-Type | 是 | Content-Type: application/json |
+| X-APP-Key | 是 |  |
+| X-APP-Session | 是 | 当前登录用户的 session |
 
 ##### URL:
 
-| 参数名称 | 参考 | 是否必须 | 备注 |
+| 参数名称 | 类型 | 是否必须 | 备注 |
 |---|---|---|---|
-| conversationid | 12345678 | 是 | 对话的 ID |
-| start | 0 | 否 | 从第几条开始 |
-| limit | 10 | 否 | 每页显示的条数 |
+| conversationid | int | 是 | 对话的 ID |
+| start | int | 否 | 从第几条开始，默认 0 |
+| limit | int | 否 | 每页显示的条数，默认 20 |
 
 #### 返回
 
@@ -119,7 +119,7 @@
 |---|---|---|---|
 | code | int | 是 | 0，1 |
 | msg | string | 是 | 成功，不成功 |
-| data | array | 是 | 返回改组对话的所有内容，数组格式 |
+| data | array | 是 | 返回改组对话的所有内容 |
 
 ##### data
 
@@ -139,24 +139,24 @@
 
 | 接口名称 | 当前版本 | 当前状态 | 接口地址 | 请求方式 | 返回格式 |
 |---|---|---|---|---|---|
-| 删除信息 | v1.0 | 完成 | /message\_delete| POST | json |
+| 删除信息 | v1.0 | 完成 | /message| DELETE | json |
 
 #### 请求
 
 ##### Headers:
 
-| 参数名称 | 参考 | 是否必须 | 备注 |
-|---|---|---|---|
-| Content-Type | Content-Type: application/json | 是 |  |
-| X-APP-Key | 123456 | 是 |  |
-| X-APP-Session | 123456 | 是 | 当前登录用户的 session |
+| 参数名称 | 是否必须 | 备注 |
+|---|---|---|
+| Content-Type | 是 | Content-Type: application/json |
+| X-APP-Key | 是 |  |
+| X-APP-Session | 是 | 当前登录用户的 session |
 
 ##### Body:
 
-| 参数名称 | 参考 | 是否必须 | 备注 |
+| 参数名称 | 类型 | 是否必须 | 备注 |
 |---|---|---|---|
-| conversationid | 12345678 | 是 | 对话的 ID |
-| type | 1 | 是 | 1 仅自己，2 群体 |
+| conversationid | int | 是 | 对话的 ID |
+| type | int | 是 | 1 仅自己，2 群体 |
 
 #### 返回
 
@@ -164,5 +164,5 @@
 |---|---|---|---|
 | code | int | 是 | 0，1 |
 | msg | string | 是 | 成功，不成功 |
-| data | array | 是 | null |
+| data | string | 是 | null |
 
