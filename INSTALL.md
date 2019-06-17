@@ -23,6 +23,10 @@
 |---|---|---|---|
 | email | string | 是 | Email |
 | time | string | 是 | 当前时间，格式是时间戳，毫秒级 |
+| timezone | string | 是 | 当前时区 |
+| devicetype | string | 是 | 设备类型，iOS, Android, macOS, windows |
+| devicetoken | string | 否 | iOS/macOS 设备必须填写 |
+| deviceid | string | 否 | Android 设备必须填写  |
 
 #### 返回
 
