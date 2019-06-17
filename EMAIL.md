@@ -44,7 +44,7 @@
 
 | 接口名称 | 当前版本 | 当前状态 | 接口地址 | 请求方式 | 返回格式 |
 |---|---|---|---|---|---|
-| 验证 Email 验证码 | v1.0 | 完成 | /verifyemailcode | POST | json |
+| 验证 Email 验证码 | v1.0 | 完成 | /email\_code\_verify | POST | json |
 
 #### 请求
 
