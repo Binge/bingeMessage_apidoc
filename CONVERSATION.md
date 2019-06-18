@@ -57,8 +57,8 @@
 | 参数名称 | 是否必须 | 备注 |
 |---|---|---|
 | Content-Type | 是 | Content-Type: application/json |
-| X-APP-Key | 是 |  |
-| X-APP-Session | 是 | 当前登录用户的 session |
+| X-HA-Key | 是 |  |
+| X-HA-Session | 是 | 当前登录用户的 session |
 
 ##### Body:
 
@@ -102,8 +102,8 @@
 | 参数名称 | 是否必须 | 备注 |
 |---|---|---|
 | Content-Type | 是 | Content-Type: application/json |
-| X-APP-Key | 是 |  |
-| X-APP-Session | 是 | 当前登录用户的 session |
+| X-HA-Key | 是 |  |
+| X-HA-Session | 是 | 当前登录用户的 session |
 
 ##### URL:
 
@@ -148,8 +148,8 @@
 | 参数名称 | 是否必须 | 备注 |
 |---|---|---|
 | Content-Type | 是 | Content-Type: application/json |
-| X-APP-Key | 是 |  |
-| X-APP-Session | 是 | 当前登录用户的 session |
+| X-HA-Key | 是 |  |
+| X-HA-Session | 是 | 当前登录用户的 session |
 
 ##### Body:
 
