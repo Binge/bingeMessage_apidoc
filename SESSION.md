@@ -1,12 +1,12 @@
 # EMAIL 
 
-### 请求 Email 验证码
+### 创建 SESSIONTOKEN
 
 #### 基本信息
 
 | 接口名称 | 当前版本 | 当前状态 | 接口地址 | 请求方式 | 返回格式 |
 |---|---|---|---|---|---|
-| 请求 Email 验证码 | v1.0 | 完成 | /email\_code\_request | POST | json |
+| 创建 SESSIONTOKEN | v1.0 | 完成 | /sessiontoken | POST | json |
 
 #### 请求
 
@@ -34,13 +34,13 @@
 
 ---
 
-### 验证 Email 验证码
+### 验证 SESSIONTOKEN
 
 #### 基本信息
 
 | 接口名称 | 当前版本 | 当前状态 | 接口地址 | 请求方式 | 返回格式 |
 |---|---|---|---|---|---|
-| 验证 Email 验证码 | v1.0 | 完成 | /email\_code\_verify | POST | json |
+| 验证 SESSIONTOKEN | v1.0 | 完成 | /sessiontoken\_verify | POST | json |
 
 #### 请求
 
@@ -55,8 +55,7 @@
 
 | 参数名称 | 类型 | 是否必须 | 备注 |
 |---|---|---|---|
-| email | string | 是 | Email 地址 |
-| code | int | 是 | 验证码 |
+| sessiontoken | string | 是 | Sessiontoken |
 | time | string | 是 | 当前时间，格式是时间戳，毫秒级 |
 
 #### 返回
@@ -65,10 +64,4 @@
 |---|---|---|---|
 | code | int | 是 | 0，1 |
 | msg | string | 是 | 正确，错误 |
-| data | object | 是 | null |
-
-##### data:
-
-| 名称 | 类型 | 是否必须 | 备注 |
-|---|---|---|---|
-| sessiontoken | string | 是 | 登录的 sessiontoken |
+| data | string | 是 | null |
