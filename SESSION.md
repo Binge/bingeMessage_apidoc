@@ -47,7 +47,7 @@
 ##### Headers:
 
 | 参数名称 | 是否必须 | 备注 |
-|---|---|---|---|
+|---|---|---|
 | Content-Type | 是 | Content-Type: application/json |
 | X-HA-Key | 是 |  |
 
